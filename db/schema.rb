@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706121828) do
+ActiveRecord::Schema.define(version: 20150707200002) do
 
-  create_table "contacts", force: true do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.text     "comments"
@@ -21,14 +21,14 @@ ActiveRecord::Schema.define(version: 20150706121828) do
     t.datetime "updated_at"
   end
 
-  create_table "plans", force: true do |t|
+  create_table "plans", force: :cascade do |t|
     t.string   "name"
     t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "profiles", force: true do |t|
+  create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "first_name"
     t.string   "last_name"
@@ -44,7 +44,19 @@ ActiveRecord::Schema.define(version: 20150706121828) do
     t.datetime "avatar_updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "projects", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "street_name"
+    t.integer  "house_number"
+    t.string   "postalcode"
+    t.integer  "price"
+    t.integer  "daysofwork"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

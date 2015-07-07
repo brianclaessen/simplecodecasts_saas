@@ -11,9 +11,11 @@
             <% if current_user.profile %>
           <%= link_to "Edit your profile", edit_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
           <%= link_to "Show your profile", user_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+          <%= link_to "Create new project", new_user_project_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+          <%= link_to "Checkout GRDNS", user_projects_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
             <% else %>
           <p>Crate your profile so that you can share your information in the GRDN.</p>  
-              <%= link_to "Create your profile", new_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
+              <%= link_to "Creat your profile!", new_user_profile_path(current_user), class: 'btn btn-default btn-lg btn-block' %>
             <% end %>
           </div>
         </div>

@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h1>GRDN's</h1>
+    <p>Welcome to the GRDN. View the beloved GRDN's.</p>
+    <ul class="list-unstyled">
+      <% @projects.each do |project| %>
+            <% if project %>
+          <li>
+              <div class="well row <%= cycle('white-bg', '') %>">
+                <div>
+                  <%= link_to user_project_path(id: project.id) do %>
+                    <h2><%= project.street_name %> <%= project.house_number %></h2>
+                    <p><%= project.postalcode %></p>
+                  <% end %>
+                </div>
+             </div>
+          </li>
+          <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
